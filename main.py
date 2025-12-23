@@ -1,6 +1,20 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Permitir tu dominio de GitHub Pages
+origins = [
+    "https://lucasmiguelsant.github.io",  # tu portafolio
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,   # o ["*"] si quieres permitir todos
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
@@ -10,5 +24,5 @@ def read_root():
 def get_proyectos():
     return [
         {"nombre": "Portafolio", "url": "https://lucasmiguelsant.github.io/portafolio/"},
-        {"nombre": "Otro proyecto", "url": "https://..."}
     ]
+
