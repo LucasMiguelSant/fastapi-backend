@@ -26,4 +26,3 @@ def get_proyectos():
         {"nombre": "Portafolio", "url": "https://lucasmiguelsant.github.io/portafolio/"},
         {"nombre": "Otro proyecto", "url": "https://ejemplo.com"}
     ]
-
