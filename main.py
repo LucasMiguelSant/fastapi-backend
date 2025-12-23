@@ -24,5 +24,6 @@ def read_root():
 def get_proyectos():
     return [
         {"nombre": "Portafolio", "url": "https://lucasmiguelsant.github.io/portafolio/"},
+        {"nombre": "Otro proyecto", "url": "https://ejemplo.com"}
     ]
 
