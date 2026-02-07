@@ -100,8 +100,3 @@ def completar_tarea(task_id: str):
     cursor.execute("UPDATE tasks SET status=?, updated_at=? WHERE id=?", ("done", now, task_id))
     conn.commit()
     return {"ok": True}
-
-
-scheduler = BackgroundScheduler()
-scheduler.add_job(check_tasks, "interval", seconds=30)  # revisa cada 30s
-scheduler.start()
