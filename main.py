@@ -15,3 +15,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+@app.get("/proyectos")
+def get_proyectos():
+    return [
+        {"nombre": "Focus", "url": "https://lucasmiguelsant.github.io/Focus/"}
+    ]
